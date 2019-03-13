@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/nav_complimenten"
+            android:icon="@drawable/ic_compliment"
+            android:title="@string/complimentengenerator" />
+        <item
+            android:id="@+id/nav_muziek"
+            android:icon="@drawable/ic_music"
+            android:title="@string/muziek" />
+        <item
+            android:id="@+id/nav_soundboard"
+            android:icon="@drawable/ic_soundboard"
+            android:title="@string/soundboard" />
+        <item
+            android:id="@+id/nav_more"
+            android:icon="@drawable/ic_more"
+            android:title="@string/meer" />
+    </group>
+</menu>

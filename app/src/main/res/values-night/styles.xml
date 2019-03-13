@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launcher theme only used when app is started -->
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="background">@color/black</item>
+    </style>
+
+    <style name="meer_card_style" parent="Theme.AppCompat.DayNight">
+        <item name="backgroundTint">@color/card_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="elevation">5dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:stateListAnimator">@drawable/button_state_list_animator</item>
+    </style>
+</resources>

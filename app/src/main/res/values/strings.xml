@@ -1,0 +1,83 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_id">striemeijersgang013.ladyboys</string>
+    <string name="app_name">StRiEmEiJeRs GaNg 0345</string>
+    <string name="title_activity_settings">Instellingen</string>
+    <string name="settings">Instellingen</string>
+
+    <string name="tekstKleur">tekstKleur</string>
+    <string name="randKleur">randKleur</string>
+    <string name="achtergrondKleur">achtergrondKleur</string>
+    <string name="knopKleur">knopKleur</string>
+    <string name="kerstman">kerstmanStil</string>
+    <string name="games">Spelletjes</string>
+    <string name="soundboard">Soundboard</string>
+    <string name="home">Home</string>
+    <string name="complimentengenerator">Complimenten</string>
+    <string name="muziek">Muziek</string>
+    <string name="wolm_s_hooft">Wolm\'s hooft</string>
+    <string name="advies">Advies</string>
+    <string name="spelletjes">Spelletjes</string>
+    <string name="opnieuw">Opnieuw!</string>
+    <string name="situatie">Wat is je situatie?</string>
+    <string name="dbls">Dblsgeluiden</string>
+    <string name="meer">Meer</string>
+    <string name="compliment">Wat vind ik van je?</string>
+
+    <!-- Wolm timer -->
+    <string name="wolm_timer">Wolm timer</string>
+    <string name="timer_initial">00:00</string>
+
+    <!-- App colour schemes -->
+    <string name="theme_standaard">Standaard</string>
+    <string name="theme_nachtmodus">Nachtmodus</string>
+
+    <!-- Nachmodus opties -->
+    <string name="settings_nachtmodus">nachtmodus</string>
+    <string name="nachtmodus_nooit">Nooit</string>
+    <string name="nachtmodus_auto">Auto</string>
+    <string name="nachtmodus_altijd">Altijd</string>
+
+    <string name="cast">Cast</string>
+    <string name="WAgenerator">WhatsApp generator</string>
+
+    <!-- 2048 -->
+    <string name="header">2048</string>
+    <string name="high_score">HIGH SCORE</string>
+    <string name="score">SCORE</string>
+    <string name="instructions">Swipe om te bewegen. 2 + 2 = 4. Haal 2048.</string>
+    <string name="you_win">Gewonnen!</string>
+    <string name="game_over">Game Over!</string>
+    <string name="go_on">Klik om door te gaan</string>
+    <string name="for_now">Voor nu…</string>
+    <string name="endless">"Eindeloze" modus</string>
+
+    <!-- Confirmation dialog-->
+    <string name="reset">Reset</string>
+    <string name="continue_game">Annuleren</string>
+    <string name="reset_dialog_title">Reset spel?</string>
+    <string name="reset_dialog_message">Weet je zeker dat je het spel wilt resetten?</string>
+    <!-- End 2048 -->
+
+    <!-- minesweeper -->
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">MinesSweeper</string>
+    <string name="btn_new_game">New Game</string>
+    <string name="btn_continue_game">Continue Game</string>
+    <string name="btn_high_scores">High Score</string>
+    <string name="btn_exit">Exit</string>
+    <string name="dialog_difficulty_title">Choose difficulty level</string>
+    <string name="dialog_difficulty_easy">Easy</string>
+    <string name="dialog_difficulty_medium">Medium</string>
+    <string name="dialog_difficulty_hard">Hard</string>
+    <string name="dialog_difficulty_message">Pick one</string>
+    <string name="f_scorescreen_flag_count_label">Flags</string>
+    <string name="f_scorescreen_score_count_label">Score</string>
+    <string name="lost_dialog_title">You have lost</string>
+    <string name="lost_dialog_message">Want to start again?</string>
+    <string name="OK">OK</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="won_dialog_message">Want to try again?</string>
+    <string name="won_dialog_title">Congratulations</string>
+    <!-- end minesweepr -->
+</resources>

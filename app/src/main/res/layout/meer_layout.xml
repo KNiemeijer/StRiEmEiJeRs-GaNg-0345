@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_default" />
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/achterstegrondkleur"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/meer_card_spelletjes"
+            style="@style/meer_card_style"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/card_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/meer_spelletjes_icon"
+                    style="@style/meer_card_icon"
+                    android:contentDescription="@string/advies"
+                    app:srcCompat="@drawable/ic_games" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/meer_card_text"
+                    android:text="@string/spelletjes"
+                    tools:layout_editor_absoluteX="5dp"
+                    tools:layout_editor_absoluteY="5dp" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/meer_card_timer"
+            style="@style/meer_card_style"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/card_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/meer_timer_icon"
+                    style="@style/meer_card_icon"
+                    android:contentDescription="@string/wolm_timer"
+                    android:cropToPadding="false"
+                    app:srcCompat="@drawable/ic_timer" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    style="@style/meer_card_text"
+                    android:text="@string/wolm_timer" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/meer_card_wa_generator"
+            style="@style/meer_card_style"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/card_bg"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/meer_card_icon"
+                    android:contentDescription="@string/WAgenerator"
+                    android:cropToPadding="false"
+                    app:srcCompat="@drawable/ic_textsms_black_24dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    style="@style/meer_card_text"
+                    android:text="@string/WAgenerator" />
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

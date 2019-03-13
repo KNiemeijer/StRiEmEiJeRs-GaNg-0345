@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar_default" />
+
+    <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/home_achterstegrond"
+        style="@style/scroll_style"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/linear_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.9"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/timer_progress_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/timer_progress_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <ProgressBar
+                android:id="@+id/wolm_timer"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/circle_shape"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                app:layout_constraintBottom_toTopOf="@id/timer_text_seconden"
+                app:layout_constraintEnd_toEndOf="@id/timer_progress_right"
+                app:layout_constraintStart_toStartOf="@id/timer_progress_left"
+                app:layout_constraintTop_toBottomOf="@id/timer_vraag" />
+
+            <TextView
+                android:id="@+id/timer_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:elevation="3dp"
+                android:shadowColor="@android:color/black"
+                android:text="@string/timer_initial"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/wolm_timer"
+                app:layout_constraintEnd_toEndOf="@id/wolm_timer"
+                app:layout_constraintStart_toStartOf="@id/wolm_timer"
+                app:layout_constraintTop_toTopOf="@id/wolm_timer" />
+
+            <ImageView
+                android:id="@+id/timer_wolms_hooft"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:alpha="0.9"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/wolm_timer"
+                app:layout_constraintEnd_toEndOf="@id/wolm_timer"
+                app:layout_constraintStart_toStartOf="@id/wolm_timer"
+                app:layout_constraintTop_toTopOf="@id/wolm_timer"
+                app:srcCompat="@mipmap/ic_timer_wolm_bg_round" />
+
+            <ImageView
+                android:id="@+id/timer_donot"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="10dp"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/wolm_timer"
+                app:layout_constraintEnd_toEndOf="@id/wolm_timer"
+                app:layout_constraintStart_toStartOf="@id/wolm_timer"
+                app:layout_constraintTop_toTopOf="@id/wolm_timer"
+                app:srcCompat="@drawable/ic_do_not_disturb_red_24dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/timer_middle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="206dp" />
+
+            <TextView
+                android:id="@+id/timer_vraag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="Hoe lang moet Willem z'n bek houden?"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="27sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/timer_text_seconden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="Seconden:"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/timer_text_minuten"
+                app:layout_constraintEnd_toStartOf="@+id/timer_seconde_minus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/wolm_timer" />
+
+            <Button
+                android:id="@+id/timer_seconde_minus"
+                style="@style/timer_time_buton"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@id/timer_edit_seconden"
+                app:layout_constraintEnd_toStartOf="@+id/timer_edit_seconden"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timer_text_seconden"
+                app:layout_constraintTop_toTopOf="@id/timer_edit_seconden"
+                tools:layout_constraintEnd_toEndOf="@id/timer_progress_left" />
+
+            <EditText
+                android:id="@+id/timer_edit_seconden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@id/timer_text_seconden"
+                app:layout_constraintEnd_toEndOf="@id/timer_progress_right"
+                app:layout_constraintEnd_toStartOf="@+id/timer_seconde_plus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timer_seconde_minus"
+                app:layout_constraintTop_toTopOf="@id/timer_text_seconden" />
+
+            <Button
+                android:id="@+id/timer_seconde_plus"
+                style="@style/timer_time_buton"
+                android:text="+"
+                app:layout_constraintBottom_toBottomOf="@id/timer_edit_seconden"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timer_edit_seconden"
+                app:layout_constraintTop_toTopOf="@id/timer_edit_seconden" />
+
+            <TextView
+                android:id="@+id/timer_text_minuten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="Minuten"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/timer_playpause"
+                app:layout_constraintEnd_toStartOf="@+id/timer_minuten_minus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/timer_text_seconden" />
+
+            <Button
+                android:id="@+id/timer_minuten_minus"
+                style="@style/timer_time_buton"
+                android:text="-"
+                app:layout_constraintBottom_toBottomOf="@id/timer_text_minuten"
+                app:layout_constraintEnd_toEndOf="@id/timer_seconde_minus"
+                app:layout_constraintStart_toStartOf="@id/timer_seconde_minus"
+                app:layout_constraintTop_toTopOf="@id/timer_text_minuten" />
+
+            <EditText
+                android:id="@+id/timer_edit_minuten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:gravity="center"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:text="45"
+                app:layout_constraintBottom_toBottomOf="@id/timer_text_minuten"
+                app:layout_constraintEnd_toStartOf="@+id/timer_minuten_plus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timer_minuten_minus"
+                app:layout_constraintTop_toTopOf="@id/timer_text_minuten" />
+
+            <Button
+                android:id="@+id/timer_minuten_plus"
+                style="@style/timer_time_buton"
+                android:text="+"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="@id/timer_text_minuten"
+                app:layout_constraintEnd_toEndOf="@id/timer_seconde_plus"
+                app:layout_constraintStart_toStartOf="@+id/timer_seconde_plus"
+                app:layout_constraintTop_toTopOf="@id/timer_text_minuten"
+                tools:layout_constraintStart_toStartOf="@id/timer_seconde_plus" />
+
+            <ImageButton
+                android:id="@+id/timer_reset"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_reset_dark"
+                android:backgroundTint="@color/textColor"
+                app:layout_constraintBottom_toBottomOf="@id/timer_playpause"
+                app:layout_constraintEnd_toStartOf="@id/timer_playpause"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/timer_playpause" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/timer_playpause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimary"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_play_circle_outline_white_24dp"
+                android:tint="@android:color/white"
+                app:elevation="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:rippleColor="@android:color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

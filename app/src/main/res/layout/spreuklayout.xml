@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/tegel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="Blauw tegeltje"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/tegeltje" />
+
+    <TextView
+        android:id="@+id/spreuk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:background="@android:color/transparent"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:selectAllOnFocus="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textIsSelectable="true"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/tegel"
+        app:layout_constraintEnd_toEndOf="@id/tegel"
+        app:layout_constraintStart_toStartOf="@id/tegel"
+        app:layout_constraintTop_toTopOf="@id/tegel" />
+
+    <TextView
+        android:id="@+id/auteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:selectAllOnFocus="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textIsSelectable="true"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/tegel"
+        app:layout_constraintEnd_toEndOf="@id/tegel"
+        app:layout_constraintStart_toStartOf="@id/tegel"
+        app:layout_constraintTop_toBottomOf="@id/spreuk" />
+</androidx.constraintlayout.widget.ConstraintLayout>

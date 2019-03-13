@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#00BCD4</color>
+
+    <color name="toolBarColour">@android:color/black</color>
+
+    <!-- HomeFragment colours -->
+    <color name="achterstegrondkleur">#263238</color>
+    <color name="achtergrondkleur">#424242</color>
+    <color name="textColor">#EEEEEE</color>
+    <color name="textColor_inverse">#000000</color>
+    <color name="options_button">#455A64</color>
+    <color name="options_button_shadow">#E0E0E0</color>
+
+
+    <color name="text_white">#f9f6f2</color>
+    <color name="text_black">#776e65</color>
+    <color name="text_brown">#d6cdc4</color>
+    <color name="background">#faf8ef</color>
+    <color name="icon_background">#e8ba2e</color>
+    <color name="status_background">#bbada0</color>
+    <color name="icons">#DADADA</color>
+
+    <!-- Navigation colours -->
+    <color name="nav_highlight">#FFFFFF</color>
+    <color name="nav_unchecked">@android:color/darker_gray</color>
+    <color name="nav_background">@android:color/black</color>
+
+    <!-- Meer colours -->
+    <color name="card_bg">@color/options_button</color>
+</resources>

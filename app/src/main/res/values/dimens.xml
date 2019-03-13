@@ -1,0 +1,7 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="title_image_width">128dp</dimen>
+    <dimen name="title_image_height">128dp</dimen>
+    <dimen name="f_minefield_gridview_vertical_spacing">1dp</dimen>
+    <dimen name="f_minefield_gridview_horizontal_spacing">1dp</dimen>
+</resources>

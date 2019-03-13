@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:nestedScrollingEnabled="true">
+
+    <include layout="@layout/toolbar_default" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/home_swiperefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/home_achterstegrond"
+            style="@style/scroll_style"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/constraint_style">
+
+                <LinearLayout
+                    android:id="@+id/home_achtergrond"
+                    style="@style/linear_style"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <TextView
+                        android:id="@+id/home_adviesText"
+                        style="@style/advies_style"
+                        android:text="@string/advies" />
+
+                    <View style="@style/div_style" />
+
+                    <LinearLayout
+                        android:id="@+id/home_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/achtergrondkleur"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/home_opnieuw"
+                        style="@style/opnieuw_style"
+                        android:text="@string/opnieuw" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
