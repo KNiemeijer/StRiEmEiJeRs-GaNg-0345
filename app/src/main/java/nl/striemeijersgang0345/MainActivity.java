@@ -162,11 +162,19 @@ public class MainActivity extends AppCompatActivity {
 
         // Find user
         USER = getPreferences(Context.MODE_PRIVATE).getString("user", null);
-        if(USER == null) {
-            Intent intent = AccountPicker.newChooseAccountIntent(null, null,
-                    null, false, null, null, null, null);
+        // if(USER == null) {
+            Intent intent = AccountManager.newChooseAccountIntent(
+                    null,
+                    null,
+                    new String[] {"com.google", "com.google.android.legacyimap"},
+                    false,
+                    "Selecteer een email account om te bepalen hoe je heet.",
+                    null,
+                    null,
+                    null
+            );
             startActivityForResult(intent, REQUEST_ACCOUNT);
-        } else showWelcomeBack();
+      //   } else showWelcomeBack();
     }
 
     /**

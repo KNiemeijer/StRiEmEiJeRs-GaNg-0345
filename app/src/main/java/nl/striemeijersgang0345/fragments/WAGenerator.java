@@ -148,7 +148,7 @@ public class WAGenerator extends Fragment implements mainActivityInterface,
                     in = context.getResources().getAssets().open("WA_texts/WA_gentext_" + persoon + ".txt");
                     br = new BufferedReader(new InputStreamReader(in));
                     String line;
-                    for (int i = 0; i <= maxZin; i++) {
+                    for (int i = 0; i < maxZin; i++) {
                         line = br.readLine();
                         if (i >= minZin) {
                             if (line != null) {
