@@ -1,0 +1,101 @@
+Naam: Kersteditie
+Versie: 1.1
+Datum: 07/12/2018
+Veranderingen:
+Het is bijna kerst! In de app zijn feestelijke lichtjes opgehangen en staat er een dansende kerstman voor je klaar die je verwelkomt. Andere veranderingen:
+	- Complimentengenerator met heel veel complimentjes toegevoegd. _Disclaimer: Complimenten kunnen een belediging of sarcastisch zijn._
+	- Twee spelletjes toegevoegd om te bewijzen wie de grootste dbl is. 
+	- Je kan nu je eigen kleuren in de app bepalen! _Disclaimer: Deze slaat ie niet altijd goed op._
+	- Nieuwe spreuken toegevoegd
+	- Splash screen toegevoegd
+	- Typfout in toast gefixt
+	- Wolm's vader berekening herschreven 
+	- Nieuwe bugs toegevoegd
+
+Naam: 2019 editie
+Versie: 1.2
+Datum: 31/12/2018
+Veranderingen:
+	- Kerst is voorbij. De kerstman is vertrokken (en de verlichting ook). 
+	- Gijs z'n euma spreuk verbeterd.
+	- Kelfstick's spreuk ont-verkracht.
+	- Aanpassen van de kleuren (iets) beter laten werken
+	- Een nieuw menu toevoegd voor makkelijkere navigatie
+	- Nieuwe liedjes
+	- Meer beledigingen toegevoegd.
+	- Nieuwe geluiden toegevoegd aan het soundboard
+	- Wat bugs opgelost
+	- Nieuwe bugs toegevoegd
+
+Naam: Den Nieuwe App
+Versie: 2.0
+Datum: 19/02/2019
+Veranderingen:
+	- Alle schermen opnieuw geïmplementeerd.
+	- De Wolm Timer is toegevoegd! Stel een timer in voor hoe lang wolm z'n kop moet houden.
+	- Nachtmodus toegevoegd (locatietoegang vereist voor afstemming op de zon).
+	- Geluidsfragmenten opnieuw ingesproken.
+	- Houd een knop op het soundboard ingedrukt om dit geluid te delen met anderen. Ook als ze niet de app hebben.
+	- Flapperend Vogeltje is verwijderd. De overige spelletjes zijn nu een stuk energiezuiniger.
+	- Verscheidene feestdagen worden op subtiele manier gevierd.
+	- Toolbar toegevoegd aan het instellingenscherm
+	- Alle oude bugs verwijderd.
+	- Weer een hoop nieuwe bugs erbij.
+Bekende bugs/onafgemaakte features:
+	- De mediaspeler kan niet worden vergroot
+	- Het omzetten van dag/nacht werkt niet altijd overal goed
+	- Als je de wolm timer voor je hebt of spelletjes en op 'meer' drukt in het menu, verandert enkel de titel naar 'Meer'
+	- De wolm timer bevat waarschijnlijk nog wel verschillende bugs en/of crashes, waaronder het niet gelijk lopen van de voortgangsbalk en klok wanneer je te vaak op pauzeren drukt. In alle gevallen is de klok lijdend.
+	- Enkele schermen kunnen niet goed bekeken worden in landschapsmodus.
+	- Muziek stopt met afspelen wanneer je teruggaat vanaf instellingen
+	- Mijnenveger is onspeelbaar
+
+Naam: Hotfix voor 2.0
+Versie: 2.0.1
+Datum: 01/03/2019
+Nieuwe content:
+	- Nieuwe spreuken toegevoegd
+	- Muziek kan nu ook gedeeld worden door een titel ingedrukt te houden.
+	- Tijdsindicatie voor muziek toegevoegd.
+	- Das geht ab toegevoegd aan muziek.
+	- Je kan de titel van het liedje naar links of rechts swipen om van nummer te wisselen.
+	- Er wordt een feesdagje extra gevierd.
+Aanpassingen:
+	- De app heeft geen toegang meer nodig tot je bestanden.
+	- Gedeelde bestanden worden opgeslagen in de cache van de app en verwijderd wanneer de cache meer dan 5mb inneemt. 
+	- "Advies" bij complimenten veranderd in "Wat vind ik van je?"
+	- Liever... dan... casussen voor willem en wolm verbeterd.
+	- Botenadvies herschreven naar: "Geen nood, er komt altijd een volgende boot!" Xxx kelf.
+	- Het is niet meer mogelijk om de Wolm Timer laten crashen door te grote getallen in te voeren.
+	- De muziekslider is nu rond ipv ovaal.
+	- _Zanger Zanger Bas - Zanger Bas_ titel en artiest omgedraaid.
+	- "Harses willem" popup op de goede plek gezet.
+	- Wolm timer layout wat aangepast.
+	- Mijnenveger terug gezet zoals het eerst was.
+
+Naam: Hotfix voor 2.0
+Versie: 2.0.2
+Datum: 02/03/2019
+Aanpassingen:
+	- De muziekslider glijdt nu geleidelijker bij kortje liedjes (bijvoorbeeld naas remix) waardoor deze makkelijk is om vast te pakken.
+	- Muziek stopt nu niet meer met afspelen als je naar instellingen en terug gaat, tenzij je de instellingen voor nachtmodus aanpast. 
+	- Als je naar rechts swiped bij summer van wescel (dus een nummer terug gaat), krijg je nu wél de naas remix.
+	- Kleine update aan het logo (moet nog verder veranderd worden).
+
+Naam: Personalisatie update
+Versie: 2.1
+Datum: 14/03/2019
+Nieuwe content:
+	- De app is gepersonaliseerd! Vul je emailadres in om persoonlijk aangesproken te worden.
+	- Wanneer is gijs z'n feest? 
+	- Een WhatsApp generator die nieuwe stukjes tekst bedenkt op basis van onze gesprekken.
+	- Extra geluiden aan het soundboard toegevoegd.
+	- Debielentax toegevoegd.
+	- De naam van de app is aangepast waardoor de oude versie handmatig verwijderd moet worden.
+	- De code van de app kun nu worden gevonden via instellingen.
+Aanpassingen:
+	- De toolbar bovenaan in het scherm verdwijnt nu wanneer je scrollt.
+	- Typfouten in complimenten verholpen.
+	- Terug vanaf instellingen gaat nu naar laatste scherm.
+Bekende bugs:
+	- Als je de app verkleint of naar instellingen gaat terwijl er muziek speelt, is de app bij het volgende nummer vergeten waar je gebleven was.
