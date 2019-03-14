@@ -16,9 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.common.AccountPicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -162,11 +160,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Find user
         USER = getPreferences(Context.MODE_PRIVATE).getString("user", null);
-        // if(USER == null) {
+        if(USER == null) {
             Intent intent = AccountManager.newChooseAccountIntent(
                     null,
                     null,
-                    new String[] {"com.google", "com.google.android.legacyimap"},
+                    null,
                     false,
                     "Selecteer een email account om te bepalen hoe je heet.",
                     null,
@@ -174,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     null
             );
             startActivityForResult(intent, REQUEST_ACCOUNT);
-      //   } else showWelcomeBack();
+        } else showWelcomeBack();
     }
 
     /**
@@ -345,8 +343,6 @@ public class MainActivity extends AppCompatActivity {
                 .replace(R.id.container_view, curFragment, tag)
                 .addToBackStack(navTag)
                 .commit();
-
-        // changeActionBarTitle(tag);
     }
 
     /**
@@ -397,20 +393,27 @@ public class MainActivity extends AppCompatActivity {
                         if(email.contains("michiel") || email.contains("arts") || email.contains("zeek"))
                             USER = MICHIEL;
                         Log.d("Current user is", USER);
-                        if(USER == null) {
-                            Toast.makeText(this, "Oeps, ik weet niet van wie dit emailadres is. Probeer een andere",
-                                    Toast.LENGTH_LONG).show();
-                            Intent intent = AccountPicker.newChooseAccountIntent(null, null,
-                                    null, false, null, null, null, null);
-                            startActivityForResult(intent, REQUEST_ACCOUNT);
-                        } else {
-                            // Save to preferences
-                            SharedPreferences.Editor edit = getPreferences(Context.MODE_PRIVATE).edit();
-                            edit.putString("user", USER);
-                            edit.apply();
-                            showWelcomeBack();
-                        }
                     }
+                }
+
+                if(USER == null) {
+                    Intent intent = AccountManager.newChooseAccountIntent(
+                            null,
+                            null,
+                            null,
+                            false,
+                            "Oeps, dit emailadres herken ik niet. Probeer het nog een keer met andere inloggegevens.",
+                            null,
+                            null,
+                            null
+                    );
+                    startActivityForResult(intent, REQUEST_ACCOUNT);
+                } else {
+                    // Save to preferences
+                    SharedPreferences.Editor edit = getPreferences(Context.MODE_PRIVATE).edit();
+                    edit.putString("user", USER);
+                    edit.apply();
+                    showWelcomeBack();
                 }
             }
             else if(resultCode == Activity.RESULT_CANCELED)
@@ -467,7 +470,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showWelcomeBack() {
-        // Show snackbar saying welcome back
         Snackbar.make(
                 findViewById(R.id.drawer_layout),
                 "Welkom terug " + USER + "!",
