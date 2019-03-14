@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_nightmode"
             android:key="@string/settings_nachtmodus"
             android:showDefault="true"
-            android:summary="Selecteer wanneer nachtmodus ingeschakeld moet worden"
+            android:summary="Selecteer wanneer nachtmodus ingeschakeld moet worden."
             android:title="Nachtmodus" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Over de app">
@@ -18,7 +18,7 @@
             android:id="@+id/settings_feedback"
             android:key="settings_feedback"
             android:title="Feedback"
-            android:summary="Geef me tips over wat beter kan"
+            android:summary="Geef me tips over wat beter kan."
             android:icon="@drawable/ic_feedback"/>
 
         <Preference
@@ -26,6 +26,13 @@
             android:title="@string/app_name"
             android:summary="Deze Android-applicatie wordt gratis aangeboden. Er is geen abonnement verbonden aan deze dienst. Het kan zijn dat je mobiele operator kosten rekent voor het dataverkeer dat deze applicatie gebruikt. Aan de getoonde informatie kunnen geen rechten worden ontleend."
             android:selectable="false" />
+
+        <Preference
+            android:id="@+id/settings_code"
+            android:key="settings_code"
+            android:title="Code van de App"
+            android:summary="Bekijk de open source code van de app op Github."
+            android:icon="@drawable/ic_code"/>
 
         <Preference
             android:id="@+id/settings_version"

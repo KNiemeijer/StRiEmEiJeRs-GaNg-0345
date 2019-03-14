@@ -72,6 +72,7 @@
                         android:layout_marginTop="15dp"
                         android:text="Aantal zinnen"
                         android:textColor="@color/textColor"
+                        android:textSize="15sp"
                         app:layout_constraintEnd_toEndOf="@id/wa_guide_options"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/wa_text_van_wie" />
@@ -97,27 +98,6 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/wa_seekbar"
                         app:layout_constraintTop_toTopOf="@id/wa_text_regels" />
-
-                    <TextView
-                        android:id="@+id/wa_text_scrollen"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:text="Horizontaal scrollen?"
-                        android:textColor="@color/textColor"
-                        app:layout_constraintEnd_toEndOf="@id/wa_switch_scroll"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/wa_text_regels" />
-
-                    <Switch
-                        android:id="@+id/wa_switch_scroll"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        app:layout_constraintBottom_toBottomOf="@id/wa_text_scrollen"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@id/wa_guide_options"
-                        app:layout_constraintTop_toTopOf="@id/wa_text_scrollen" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

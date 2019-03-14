@@ -3,11 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "striemeijersgang013.ladyboys"
+        applicationId "nl.striemeijersgang0345"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 2
-        versionName "2.0.3"
+        versionName "2.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
