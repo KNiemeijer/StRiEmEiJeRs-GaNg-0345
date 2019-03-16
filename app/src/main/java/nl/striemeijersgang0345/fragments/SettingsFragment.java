@@ -12,7 +12,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import nl.striemeijersgang0345.MainActivity;
 import nl.striemeijersgang0345.R;
 
 public class SettingsFragment extends PreferenceFragment {
@@ -50,10 +49,6 @@ public class SettingsFragment extends PreferenceFragment {
             startActivity(i);
             return true;
         });
-
-        Preference inlogPref = findPreference("settings_inlog");
-        if(MainActivity.USER != null)
-            inlogPref.setTitle("Je bent ingelogd als: " + MainActivity.USER);
     }
 
     @Override

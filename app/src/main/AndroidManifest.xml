@@ -7,7 +7,7 @@
 
     <uses-permission
         android:name="android.permission.GET_ACCOUNTS"
-        android:maxSdkVersion="26" />
+        android:maxSdkVersion="25" />
 
     <application
         android:allowBackup="true"
@@ -38,7 +38,7 @@
             android:label="2048"
             android:parentActivityName="nl.striemeijersgang0345.MainActivity">
             <intent-filter>
-                <action android:name="striemeijersgang013.ladyboys.2048" />
+                <action android:name="nl.striemeijersgang0345.2048" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -48,7 +48,7 @@
             android:label="Minesweeper"
             android:parentActivityName="nl.striemeijersgang0345.MainActivity">
             <intent-filter>
-                <action android:name="striemeijersgang013.ladyboys.mine" />
+                <action android:name="nl.striemeijersgang0345.mine" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

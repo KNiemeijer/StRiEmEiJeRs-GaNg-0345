@@ -1,11 +1,14 @@
 package nl.striemeijersgang0345;
 
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -29,6 +32,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import nl.striemeijersgang0345.fragments.ComplimentenFragment;
@@ -59,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
     private long prevTotalTime;
     private long timerTimeStamp;
 
-    protected static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1;
-    private final int REQUEST_SETTINGS = 1;
+    private static final int MY_PERMISSIONS_REQUEST_GET_ACCOUNTS = 2;
     private final int REQUEST_ACCOUNT = 2;
 
     // Strings for user names
@@ -276,9 +280,9 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int REQUEST_SETTINGS = 1;
         switch(item.getItemId()) {
             case R.id.menu_cast:
-
                 return true;
             case R.id.menu_settings:
                 startActivityForResult(
@@ -287,6 +291,22 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_GET_ACCOUNTS: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    getNameFromAccount();
+                    checkIfNameIsFound();
+                } else {
+                    finish();
+                }
+            }
+        }
     }
 
     /**
@@ -352,68 +372,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_SETTINGS) {
-            /* if(resultCode == Activity.RESULT_OK){
-                Log.d("Intent result", "OK");
-                setNachtModus();
-            }*/
-            /*getSupportFragmentManager()
-                    .beginTransaction()
-                    .detach(curFragment)
-                    .commit();
-
-            if(getSupportFragmentManager().getBackStackEntryCount() > 1)
-                getSupportFragmentManager().popBackStack();*/
-        }
-
         if(requestCode == REQUEST_ACCOUNT) {
             if(resultCode == Activity.RESULT_OK) {
-                Pattern emailPattern = Patterns.EMAIL_ADDRESS;
-                Account[] accounts = AccountManager.get(getApplicationContext()).getAccounts();
-                for (Account account : accounts) {
-                    if (emailPattern.matcher(account.name).matches()) {
-                        String email = account.name.toLowerCase();
-                        Log.d("Mail", email);
-                        if(email.contains("koen") || email.contains("niemeijer"))
-                            USER = KOEN;
-                        if(email.contains("kevin") || email.contains("algera"))
-                            USER = KEVIN;
-                        if(email.contains("willem") || email.contains("smits"))
-                            USER = WILLEM;
-                        if(email.contains("gijs") || email.contains("cunnen"))
-                            USER = GIJS;
-                        if(email.contains("thomas") || email.contains("bardoel"))
-                            USER = THOMAS;
-                        if(email.contains("wescel") || email.contains("manders"))
-                            USER = WESCEL;
-                        if(email.contains("thijs") || email.contains("putten"))
-                            USER = THIJS;
-                        if(email.contains("yoram") || email.contains("carboex"))
-                            USER = YORAM;
-                        if(email.contains("michiel") || email.contains("arts") || email.contains("zeek"))
-                            USER = MICHIEL;
-                        Log.d("Current user is", USER);
-                    }
-                }
-
-                if(USER == null) {
-                    Intent intent = AccountManager.newChooseAccountIntent(
-                            null,
-                            null,
-                            null,
-                            false,
-                            "Oeps, dit emailadres herken ik niet. Probeer het nog een keer met andere inloggegevens.",
-                            null,
-                            null,
-                            null
-                    );
-                    startActivityForResult(intent, REQUEST_ACCOUNT);
+                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS)
+                            != PackageManager.PERMISSION_GRANTED)
+                        requestContactsPermission();
+                    else // Permission has already been granted
+                        getNameFromAccount();
                 } else {
-                    // Save to preferences
-                    SharedPreferences.Editor edit = getPreferences(Context.MODE_PRIVATE).edit();
-                    edit.putString("user", USER);
-                    edit.apply();
-                    showWelcomeBack();
+                    getNameFromAccount();
+                    checkIfNameIsFound();
                 }
             }
             else if(resultCode == Activity.RESULT_CANCELED)
@@ -475,5 +444,79 @@ public class MainActivity extends AppCompatActivity {
                 "Welkom terug " + USER + "!",
                 Snackbar.LENGTH_LONG
         ).show();
+    }
+
+    private void getNameFromAccount() {
+        Pattern emailPattern = Patterns.EMAIL_ADDRESS;
+        Account[] accounts = AccountManager.get(getApplicationContext()).getAccounts();
+        for (Account account : accounts) {
+            if (emailPattern.matcher(account.name).matches()) {
+                String email = account.name.toLowerCase();
+                Log.d("Mail", email);
+                if (email.contains("koen") || email.contains("niemeijer"))
+                    USER = KOEN;
+                if (email.contains("kevin") || email.contains("algera"))
+                    USER = KEVIN;
+                if (email.contains("willem") || email.contains("smits"))
+                    USER = WILLEM;
+                if (email.contains("gijs") || email.contains("cunnen"))
+                    USER = GIJS;
+                if (email.contains("thomas") || email.contains("bardoel"))
+                    USER = THOMAS;
+                if (email.contains("wescel") || email.contains("manders"))
+                    USER = WESCEL;
+                if (email.contains("thijs") || email.contains("putten"))
+                    USER = THIJS;
+                if (email.contains("yoram") || email.contains("carboex"))
+                    USER = YORAM;
+                if (email.contains("michiel") || email.contains("arts") || email.contains("zeek"))
+                    USER = MICHIEL;
+                Log.d("Current user is", USER);
+            }
+        }
+    }
+
+    private void checkIfNameIsFound() {
+        if(USER == null) {
+            Intent intent = AccountManager.newChooseAccountIntent(
+                    null,
+                    null,
+                    null,
+                    false,
+                    "Oeps, dit emailadres herken ik niet. Probeer het nog een keer met andere inloggegevens.",
+                    null,
+                    null,
+                    null
+            );
+            startActivityForResult(intent, REQUEST_ACCOUNT);
+        } else {
+            // Save to preferences
+            SharedPreferences.Editor edit = getPreferences(Context.MODE_PRIVATE).edit();
+            edit.putString("user", USER);
+            edit.apply();
+            showWelcomeBack();
+        }
+    }
+
+    private void requestContactsPermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.GET_ACCOUNTS)) {
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this, R.style.AlertDialogCustom);
+            alertDialogBuilder.setTitle("Toegang tot contacten");
+            alertDialogBuilder
+                    .setMessage("Om verder te gaan moet ik weten wie je bent. Daarvoor moet ik een emailadres hebben. Deze wordt niet opgeslagen en wordt enkel gebruikt om je naam te bepalen.")
+                    .setCancelable(false)
+                    .setPositiveButton("Ok",
+                            (dialog, id) -> ActivityCompat.requestPermissions(this,
+                                    new String[]{Manifest.permission.GET_ACCOUNTS},
+                                    MY_PERMISSIONS_REQUEST_GET_ACCOUNTS))
+
+                    .setNegativeButton("Annuleer",
+                            (dialog, id) -> finish());
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        } else ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.GET_ACCOUNTS},
+                MY_PERMISSIONS_REQUEST_GET_ACCOUNTS);
     }
 }

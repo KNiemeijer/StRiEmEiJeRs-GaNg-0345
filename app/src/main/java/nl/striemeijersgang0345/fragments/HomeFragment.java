@@ -6,7 +6,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -507,15 +506,6 @@ public class HomeFragment extends Fragment implements mainActivityInterface {
             feestMonth = Calendar.getInstance().getMinimum(Calendar.MONTH);
             feestYear++;
         }
-
-        Log.d("saturday", Integer.toString(saturday));
-        Log.d("dayOfWeek", Integer.toString(dayOfWeek));
-        Log.d("dayOfMonth", Integer.toString(dayOfMonth));
-        Log.d("daysInMonth", Integer.toString(daysInMonth));
-        Log.d("monthsInYear", Integer.toString(monthsInYear));
-        Log.d("feestMonth", Integer.toString(feestMonth));
-        Log.d("daysTillSaturday", Integer.toString(daysTillSaturday));
-        Log.d("feestDay", Integer.toString(feestDay));
 
         String feestMonthInLetters;
 

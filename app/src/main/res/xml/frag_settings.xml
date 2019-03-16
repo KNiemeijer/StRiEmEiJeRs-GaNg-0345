@@ -1,13 +1,5 @@
 <PreferenceScreen xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Inloggegevens">
-        <Preference
-            android:id="@+id/settings_inlog"
-            android:key="settings_inlog"
-            android:title="Je bent ingelogd als: "
-            android:iconSpaceReserved="true"
-            tools:targetApi="o" />
-    </PreferenceCategory>
 
     <PreferenceCategory android:title="Uiterlijk">
         <ListPreference
@@ -40,7 +32,7 @@
             android:id="@+id/settings_code"
             android:key="settings_code"
             android:title="Code van de App"
-            android:summary="Bekijk de open source code van de app op Github."
+            android:summary="Bekijk de broncode van de app op Github."
             android:icon="@drawable/ic_code"/>
 
         <Preference

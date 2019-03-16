@@ -22,6 +22,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     private Intent returnIntent;
     private boolean NIGHT_CHANGED = false;
+    private static final int MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,25 +89,26 @@ public class SettingsActivity extends AppCompatActivity {
         // Check for location permission
         askForPermission();
 
-        if(nachtmodus.equals(getString(R.string.nachtmodus_auto)))
+        if (nachtmodus.equals(getString(R.string.nachtmodus_auto)))
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
-        else if(nachtmodus.equals(getString(R.string.nachtmodus_altijd)))
+        else if (nachtmodus.equals(getString(R.string.nachtmodus_altijd)))
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        else if(nachtmodus.equals(getString(R.string.nachtmodus_nooit)))
+        else if (nachtmodus.equals(getString(R.string.nachtmodus_nooit)))
             getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
         getDelegate().applyDayNight();
     }
 
     private void askForPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION))
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
-            else
+                        MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+            }
+            else {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                        MainActivity.MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+                        MY_PERMISSIONS_REQUEST_ACCESS_COARSE_LOCATION);
+            }
         }
     }
 }
