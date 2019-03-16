@@ -14,11 +14,16 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import nl.striemeijersgang0345.MainActivity;
 import nl.striemeijersgang0345.R;
-import nl.striemeijersgang0345.interfaces.mainActivityInterface;
 
-public class ComplimentenFragment extends Fragment implements mainActivityInterface {
+public class ComplimentenFragment extends Fragment {
 
     private Context context;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.context = context;
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -36,19 +41,6 @@ public class ComplimentenFragment extends Fragment implements mainActivityInterf
         MaterialButton mButton = view.findViewById(R.id.comp_opnieuw);
         mButton.setOnClickListener(v -> mCompliment.setText(generateCompliment()));
     }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        this.context = context;
-        ((MainActivity) context).setActivityListener(ComplimentenFragment.this);
-    }
-
-    public void back() {
-        ((MainActivity) context).goBack();
-    }
-
-    public void paintColours(String tekstKleur, String achtergrondKleur, String randKleur, String knopKleur) { }
 
     private static String generateCompliment() {
         final String complimentenLijst[] = {

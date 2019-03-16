@@ -2,7 +2,6 @@ package nl.striemeijersgang0345.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -320,36 +319,16 @@ public class HomeFragment extends Fragment implements mainActivityInterface {
         clearList();
         title.setText("Waar gaat het over?");
 
-        EditText edit = new EditText(context);
-        edit.setHint("Typ in wat je liever hebt...");
-        edit.setTag("lieverEdit");
-        edit.setTextSize(30);
+        View lieverDanView = LayoutInflater.from(context).inflate(
+                R.layout.button_volgende,
+                options);
+        EditText edit = lieverDanView.findViewById(R.id.lieverDanEdit);
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        edit.setGravity(Gravity.CENTER);
-        int color = getResources().getColor(R.color.colorPrimary);
-        edit.setBackgroundTintList(ColorStateList.valueOf(color));
-        params.setMargins(50, 50, 50, 50);
-        options.addView(edit, params);
-
-        Button volgende = new MaterialButton(new ContextThemeWrapper(context, R.style.opnieuw_style), null, R.style.opnieuw_style);
-        volgende.setText("Volgende");
-        volgende.setTextColor(getResources().getColor(R.color.text_white));
-        volgende.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        volgende.setGravity(Gravity.CENTER);
+        Button volgende = lieverDanView.findViewById(R.id.button_volgende);
         volgende.setOnClickListener(v -> {
             if (!TextUtils.isEmpty(edit.getText()))
                 lieverText(edit.getText().toString());
         });
-        params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        params.setMargins(30, 50, 30, 20);
-        edit.setGravity(Gravity.CENTER);
-        options.addView(volgende, params);
-
     }
 
     private void lieverText(String text) {

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lieverDanEdit"
+        android:hint="Typ in wat je liever hebt..."
+        android:tag="lieverEdit"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:backgroundTint="@color/colorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_volgende"
+        style="@style/opnieuw_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:text="Volgende"
+        android:textColor="@color/text_white" />
+
+</LinearLayout>
